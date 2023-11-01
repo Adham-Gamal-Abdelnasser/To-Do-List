@@ -1,0 +1,145 @@
+:root {
+    --main-black: #0d1117;
+    --sec-black: #161b22;
+    --finance-color: #30a277;
+    --health-color: #fb882e;
+    --productivity-color: #fc3637;
+    --education-color: #2e4acd;
+    --gray-color: #dadada;
+    --text-color: #a5a6a7;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.bg-sec-black {
+    background-color: var(--sec-black);
+    
+}
+.bg-main-black {
+    background-color: var(--main-black);
+
+}
+
+.ff-lobster {
+    font-family: 'Lobster', cursive;
+}
+.text-color {
+    color: var(--text-color);
+
+}
+.tasks-container {
+    border: 1px solid var(--text-color);
+}
+.doma {
+    width: 25px;
+    height: 25px;
+}
+.task-control i {
+    cursor: pointer;
+}
+.category {
+    width: fit-content;
+}
+.bg-education {
+    background-color: var(--education-color);
+}
+.bg-health {
+    background-color: var(--health-color);
+}
+.bg-productivity {
+    background-color: var(--productivity-color);
+}
+.bg-finance {
+    background-color: var(--finance-color);
+}
+nav div.container {
+    border-top: 1px solid var(--text-color);
+    border-bottom: 1px solid var(--text-color);
+}
+.active {
+    background-color: var(--main-black);
+}
+nav ul li {
+    cursor: pointer;
+    transition: 0.3s;
+}
+nav ul li:hover {
+    background-color: var(--main-black);
+}
+.container.columns section .content {
+    background-color: var(--sec-black);
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
+  }
+  
+  section .header {
+    background-color: var(--main-black);
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+  }
+  
+  section .header h2 {
+    font-family: "Lobster", cursive;
+    font-size: 20px;
+  }
+  
+  section .header span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2e3137;
+    padding-inline: 6px;
+    border-radius: 15px;
+    font-size: 14px;
+  }
+  
+  .tasks[data-view="bars"] {
+    display: flex;
+    gap: 15px;
+    overflow: auto;
+  }
+  
+  .tasks[data-view="bars"] .task {
+    min-width: 300px;
+    max-width: 300px;
+    margin: 0 !important;
+  }
+  
+  section .tasks .task {
+    background-color: var(--main-black);
+    padding: 15px;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
+  }
+  
+  section .tasks .task:not(:last-child) {
+    margin-bottom: 15px;
+  }
+  
+  section .task h3 {
+    font-size: 18px;
+    font-weight: 700;
+  }
+  
+  section .task li {
+    cursor: pointer;
+  }
+
+  section .task .category {
+    width: fit-content;
+    font-size: 14px;
+    padding: 3px 8px;
+    border-radius: 5px;
+    color: #f1f1f1;
+    margin-bottom: 15px;
+  }
+.model {
+  z-index: 99999999999999999999999999999999;
+}
+
+input , select{
+  outline: none;
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ToDo List</title>
+        <link rel="website icon" href="logo.png" type="png" />
+        <!-- bootstrap link file -->
+        <link rel="stylesheet" href="css/bootstrap-5.3.0-alpha1-dist/css/bootstrap.min.css" />
+        <!-- fontawesome link file -->
+        <link rel="stylesheet" href="css/all.min.css" />
+        <!-- croissont one google font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700&family=Croissant+One&family=Dancing+Script:wght@400;500;600;700&family=Jomhuria&family=Lobster&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Open+Sans:ital,wght@1,300&family=Poppins&family=Teko:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <!-- main stylesheet -->
+        <link rel="stylesheet" href="css/index.css" />
+    </head>
+    <body>
+        <header class="fixed-top z-3 p-3 d-flex justify-content-around bg-sec-black">
+            <div class="container  d-flex align-items-center gap-3 p-2">
+                <h2 class="fw-bold">
+                    <a href="#" class="ff-lobster text-color text-decoration-none">DailyTask</a>
+                </h2>
+                <div class="input-group flex-nowrap mx-auto w-50">
+                    <label class="input-group-text" id="addon-wrapping">
+                        <i class="fab fa-searchengin"></i>
+                    </label>
+                    <input type="text" id="searchInput" class="form-control " placeholder="Search Tasks...." aria-label="search" aria-describedby="addon-wrapping" list="categories">
+                    <datalist id="categories">
+                        <option value="Education"></option>
+                        <option value="Health"></option>
+                        <option value="Finance"></option>
+                        <option value="Productivity"></option>
+                    </datalist>
+                </div>
+            </div>
+        </header>
+
+        <main class="min-vh-100 pt-5 bg-main-black">
+            <nav class="mt-5 text-color d-flex align-items-center">
+                <div class="container d-flex align-items-center justify-content-between">
+                    <h2><i class="fas fa-star"></i> All Of Tasks</h2>
+                    <ul class="list-unstyled d-flex gap-3 mt-3 bg-sec-black p-2 rounded-1">
+                        <li class="p-2 rounded-2 active" id="grid"><i class="fas fa-grip-vertical "></i></li>
+                        <li class="p-2 rounded-2" id="bars"><i class="fas fa-grip"></i></li>
+                    </ul>
+                </div>
+            </nav>
+            <button id="newTaskBtn" class="btn btn-info mx-auto mt-5 d-flex align-items-center mb-5 fw-semibold">
+                <i class="fas fa-folder-plus mx-2"></i>Add New Task
+            </button>
+
+            <div class="container columns pb-5">
+                <div class="row g-3 align-items-start">
+                  <section class="to-do col-md-6 col-lg-4">
+                    <div class="content">
+                      <div class="header d-flex justify-content-between align-items-center py-2 px-3">
+                        <h2 class="m-0 text-capitalize text-color">Next up</h2>
+                        <span id="nextUpCountElement" class="text-color">0</span>
+                      </div>
+                      <div class="tasks p-3" id="toDoContainer"></div>
+                    </div>
+                  </section>
+        
+                  <section class="in-progress col-md-6 col-lg-4">
+                    <div class="content">
+                      <div class="header d-flex justify-content-between align-items-center py-2 px-3">
+                        <h2 class="m-0 text-capitalize text-color">In Progress</h2>
+                        <span id="inProgressCountElement" class="text-color">0</span>
+                      </div>
+                      <div class="tasks p-3" id="inProgressContainer"></div>
+                    </div>
+                  </section>
+        
+                  <section class="done col-md-6 col-lg-4">
+                    <div class="content">
+                      <div class="header d-flex justify-content-between align-items-center py-2 px-3">
+                          <h2 class="m-0 text-capitalize text-color">Done</h2>
+                          <span id="doneCountElement" class="text-color">0</span>
+                      </div>
+                      <div class="tasks p-3" id="doneContainer"></div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <div id="modal" class="position-absolute start-0 end-0 top-0 bottom-0 model bg-dark bg-opacity-75 d-none justify-content-center align-items-center">
+            <div class="w-75 h-75 bg-transparent d-flex flex-column gap-5">
+                <select class="p-3 rounded-2" id="taskStatus">
+                    <option value="nextUp">Next Up</option>
+                    <option value="inProgress">In Progress</option>
+                    <option value="done">Done</option>
+                </select>
+                <select class="p-3 rounded-2" id="taskCategory">
+                    <option value="education">Education</option>
+                    <option value="health">Health & Fitness</option>
+                    <option value="finance">Finance</option>
+                    <option value="productivity">Productivity</option>
+                </select>
+                <input type="text" class="p-3 rounded-2" placeholder="Task Title" id="taskTitle">
+                <input type="text" class="p-3 rounded-2" placeholder="Task Description" id="taskDescription">
+                <button id="addingTaskBtn" class="w-100 btn btn-outline-info">Add New Task</button>
+            </div>
+        </div>
+
+        <footer class="fixed-bottom d-flex align-items-center p-1 gap-2 justify-content-center bg-sec-black">
+            <p class="ff-lobster text-color fs-4">made with <i class="fa-solid fa-heart fa-beat fs-6 text-danger"></i> by</p>
+            <a href="https://www.linkedin.com/in/adham-gamal-abdelnasser-%F0%9F%87%B5%F0%9F%87%B8-b47312225/" class="d-flex doma justify-content-center align-items-center"><img src="logo.png" class="w-100"></a>
+        </footer>
+
+        <!-- main js file -->
+        <script src="index.js"></script>
+    </body>
+</html>
+
+
+
